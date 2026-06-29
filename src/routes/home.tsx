@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button"
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
 import { SparklesText } from "@/components/ui/sparkles-text"
 import { TextAnimate } from "@/components/ui/text-animate"
 import { DiaTextReveal } from "@/components/ui/dia-text-reveal"
@@ -17,7 +19,7 @@ import {
 
 export function Home() {
   return (
-    <div className="h-full grid justify-center items-center">
+    <div className="h-full flex flex-col justify-center items-center gap-10">
         {/* Tex Zone */}
 
     <div className="relative z-10 flex flex-col items-center justify-center gap-4 px-6 text-center">
@@ -37,20 +39,10 @@ export function Home() {
         </TextAnimate>
     </div>
 
-     <Card className="w-64">
-            <CardHeader>
-                <CardTitle>Room</CardTitle>
-                <CardDescription>Enter the room information</CardDescription>
-            </CardHeader>
-            <CardContent>
-                <p>Card Content</p>
-            </CardContent>
-            <CardFooter>
-                <Button type="submit" className="w-full">
-                    Connect
-                </Button>
-            </CardFooter>
-        </Card>
+    <div className="relative z-10 flex items-center justify-center gap-4 px-6">
+       <Button className="p-5">Browse Rooms</Button>
+       <Button className="p-5" variant="outline">Second Button</Button>
+    </div>
 
     <HomeBackground />
     {/* <div className="fixed h-full w-full overflow-hidden">
