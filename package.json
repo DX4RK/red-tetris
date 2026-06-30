@@ -7,5 +7,8 @@
     "build:client": "pnpm --filter client build",
     "build:server": "pnpm --filter server build",
     "start": "pnpm build:client && pnpm build:server && pnpm --filter server start"
+  },
+  "dependencies": {
+    "styled-components": "^6.4.3"
   }
 }

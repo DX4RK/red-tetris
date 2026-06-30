@@ -22,7 +22,7 @@ export function Home() {
   return (
     <div className="h-full flex flex-col justify-center items-center gap-10">
 
-        <div className="bg-red/30 backdrop-blur-sm fixed flex z-3 h-full w-full justify-center items-center">
+        {/* <div className="bg-red/30 backdrop-blur-sm fixed flex z-3 h-full w-full justify-center items-center">
             <Card size="sm" className="mx-auto w-full max-w-sm">
                 <CardHeader>
                     <CardTitle>Name Required</CardTitle>
@@ -39,7 +39,7 @@ export function Home() {
                     </Button>
                 </CardFooter>
             </Card>
-        </div>
+        </div> */}
 
         <div className="relative z-1 flex flex-col items-center justify-center gap-4 px-6 text-center">
             <span className="text-xs font-semibold tracking-[0.35em] text-slate-800/60 uppercase dark:text-slate-200/60">
