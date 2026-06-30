@@ -1,14 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import { Home } from './routes/home'
-import { InteractiveGridPatternDemo } from './routes/test'
+import { Menu } from './routes/menu'
 
 function App() {
   return (
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/d" element={<InteractiveGridPatternDemo />} />
+            <Route path="/menu" element={<Menu />} />
         </Routes>
     </BrowserRouter>
   )
