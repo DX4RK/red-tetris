@@ -1,5 +1,6 @@
 import Fastify from 'fastify';
 import fastifyEnv from '@fastify/env';
+import fastifyMysql from '@fastify/mysql';
 import fastifySocketIO from 'fastify-socket.io';
 import loggerConfig from './config/logger.json' with { type: 'json' };
 import { schema } from './config/env.schema.js';
@@ -9,6 +10,10 @@ export async function buildServer() {
   const fastify = Fastify({ logger: loggerConfig });
 
   await fastify.register(fastifyEnv, { schema, dotenv: true });
+
+  await fastify.register(fastifyMysql, {
+    connectionString: 'mysql://root:yourpassword@localhost:3307/your_db_name'
+  })
 
   await fastify.register(fastifySocketIO as any, {
     cors: {
