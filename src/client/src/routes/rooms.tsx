@@ -32,8 +32,8 @@ export function Rooms() {
 				<CardDescription>Enter the room information</CardDescription>
 			</CardHeader>
 			<CardContent>
-				<p>Card Content</p>
-				<input></input>
+				<input className="outline-2"
+					placeholder="room name"></input>
 			</CardContent>
 			<CardFooter>
 			</CardFooter>

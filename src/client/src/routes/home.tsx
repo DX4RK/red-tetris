@@ -1,3 +1,5 @@
+import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 import { Label } from "@/components/ui/label"
 import { Ripple } from "@/components/ui/ripple"
 import { Input } from "@/components/ui/input"
@@ -6,7 +8,8 @@ import { TextAnimate } from "@/components/ui/text-animate"
 import { DiaTextReveal } from "@/components/ui/dia-text-reveal"
 import { PlayerButton } from "@/components/elements/play-button"
 import { RoomButton } from "@/components/elements/room-button"
-
+import { Popup } from "@/components/elements/popup"
+import { GameButton } from "@/components/elements/game-button"
 import HomeBackground from "@/components/home-background"
 
 import {
@@ -19,30 +22,30 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
+export function NamePopup () {
 
+	const [open, setOpen] = useState(false);
+	const [name, setName] = useState<string | null>(null);
+	const [input, setInput] = useState("");
+	const navigate = useNavigate();
+
+	const handlePlay = () => {
+		if (!name) {
+			setOpen(true);
+		} else {
+		}
+	};
+
+	const confirm = () => {
+		if (input.trim()) {
+			setName(input.trim());
+			navigate("/rooms", { state: { playerName: name.trim() } });
+		}
+	};
 
 export function Home() {
   return (
 	<div className="h-full flex flex-col justify-center items-center gap-10">
-{/* 
-		<div className="bg-red/30 backdrop-blur-sm fixed flex z-3 h-full w-full justify-center items-center">
-			<Card size="sm" className="mx-auto w-full max-w-sm">
-				<CardHeader>
-					<CardTitle>Name Required</CardTitle>
-					<CardDescription>
-						Before playing, we need your name.
-					</CardDescription>
-				</CardHeader>
-				<CardContent>
-					<Input placeholder="Enter your name" />
-				</CardContent>
-				<CardFooter>
-					<Button size="sm" className="w-full">
-						Start
-					</Button>
-				</CardFooter>
-			</Card>
-		</div> */}
 
 		<div className="relative z-1 flex flex-col items-center justify-center gap-4 px-6 text-center">
 			<span className="text-xs font-semibold tracking-[0.35em] text-slate-800/60 uppercase dark:text-slate-200/60">
@@ -62,7 +65,16 @@ export function Home() {
 		</div>
 
 		<div className="relative z-2 flex items-center justify-center gap-4 px-6">
-		   <PlayerButton />
+			<Popup />
+			<div className="flex gap-[22px]">
+				<GameButton variant="primary" onClick={() => console.log("Singleplayer")}>
+				Singleplayer
+				</GameButton>
+				<GameButton variant="secondary" onClick={() => console.log("Multiplayer")}>
+				Multiplayer
+				</GameButton>
+			</div>
+			<PlayerButton />
 		   <RoomButton />
 		</div>
 
@@ -73,4 +85,4 @@ export function Home() {
 		</div>
 	</div>
   )
-}
+}}

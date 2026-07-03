@@ -8,7 +8,7 @@ export function PlayerButton() {
 
   const handleSubmit = () => {
 	if (name.trim() === "") return;
-	navigate("/game", { state: { playerName: name.trim() } });
+	navigate("/rooms", { state: { playerName: name.trim() } });
   };
 
   return (
