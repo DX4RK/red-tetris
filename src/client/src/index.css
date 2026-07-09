@@ -7,6 +7,8 @@
 
 @theme inline {
 	--font-mono: "Martian Mono", monospace;
+	--font-helvetica: 'Helvetica', sans-serif;
+	--font-helvetica-bold: 'Helvetica-Bold', sans-serif;
     --font-heading: var(--font-sans);
     --font-sans: 'Geist Variable', sans-serif;
     --color-sidebar-ring: var(--sidebar-ring);
@@ -68,8 +70,8 @@
     transform: translateZ(0) rotate(360deg);
         }
     }
-  --animate-ripple: ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite
-;
+  --animate-ripple: ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite;
+
   @keyframes ripple {
   0%, 100% {
     transform: translate(-50%, -50%) scale(1);}
@@ -92,6 +94,22 @@
   100% {
     background-position: 0% 50%;
     transform: rotate(-5deg) scale(0.9);}}}
+
+@font-face {
+	font-family: 'Helvetica';
+	src: url('/font/Helvetica.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Helvetica-Bold';
+	src: url('/font/Helvetica-Bold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
 
 :root {
     --background: oklch(1 0 0);

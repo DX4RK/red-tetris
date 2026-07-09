@@ -4,7 +4,7 @@ import { GridPattern } from "@/components/ui/grid-background"
 export default function HomeBackground() {
   return (
     <>
-        <GridPattern width={80} height={80} className="opacity-20" />
+        <GridPattern width={80} height={80} />
         <LightRays />
     </>
   );
