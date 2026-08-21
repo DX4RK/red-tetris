@@ -4,6 +4,6 @@ start:
 
 
 help:
-	python3 main.py --help
+	python3 ./assets/main.py --help
 
 .SILENT:
