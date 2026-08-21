@@ -1,9 +1,23 @@
 services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
   frontend:
-    image: src/client
+    build:
+      context: ./src/client
     ports:
       - "5173:5173"
   backend:
-    image: src/server
+    build:
+      context: ./src/server
     ports:
       - "3000:3000"
+
+volumes:
+  mysql-data:

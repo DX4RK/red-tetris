@@ -1,8 +1,0 @@
-packages:
-  - 'src/client'
-  - 'src/server'
-allowBuilds:
-  esbuild: false
-  fastify-socket.io: false
-onlyBuiltDependencies:
-  - esbuild

@@ -11,9 +11,9 @@ export async function buildServer() {
 
   await fastify.register(fastifyEnv, { schema, dotenv: true });
 
-  await fastify.register(fastifyMysql, {
-    connectionString: 'mysql://root:yourpassword@localhost:3307/your_db_name'
-  })
+  //await fastify.register(fastifyMysql, {
+   // connectionString: 'mysql://root:yourpassword@localhost:3307/your_db_name'
+  //})
 
   await fastify.register(fastifySocketIO as any, {
     cors: {

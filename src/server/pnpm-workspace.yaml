@@ -1,0 +1,5 @@
+verifyDepsBeforeRun: false
+allowBuilds:
+  esbuild: true
+  fastify-socket.io: true
+confirmModulesPurge: false
