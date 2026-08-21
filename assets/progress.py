@@ -46,7 +46,7 @@ def cmd_done():
         sys.exit(1)
     state = json.loads(STATE_FILE.read_text())
     draw(state["label"], state["total"], state["total"])
-    sys.stdout.write(f"  {BOLD}{GREEN}\u2713{RESET}\n")  # newline + checkmark
+    sys.stdout.write(f"  {BOLD}{GREEN}\u2713{RESET}\n")
     sys.stdout.flush()
     STATE_FILE.unlink(missing_ok=True)
 
