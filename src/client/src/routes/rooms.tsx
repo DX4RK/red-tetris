@@ -11,8 +11,8 @@ interface Room {
 interface GameState {
   playerName?: string;
 }
-
-const MOCK_ROOMS: Room[] = [
+//fake API a remplacer 
+const ROOMS: Room[] = [
   { id: "1", name: "Hugo", players: 1, maxPlayers: 4 },
   { id: "2", name: "Test", players: 3, maxPlayers: 4 },
 ];
@@ -26,20 +26,19 @@ export function Rooms() {
   const navigate = useNavigate();
   const { playerName } = (location.state as GameState) ?? {};
 
-  useEffect(() => {
-    const fetchRooms = async () => {
-      try {
-        // Pas de back pour l'instant : on simule un léger délai réseau
-        await new Promise((resolve) => setTimeout(resolve, 300));
-        setRooms(MOCK_ROOMS);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Erreur inconnue");
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchRooms();
-  }, []); // [] = une seule fois, au montage
+useEffect(() => {
+const fetchRooms = async () => {
+	try {
+	await new Promise((resolve) => setTimeout(resolve, 300));
+	setRooms(ROOMS);
+	} catch (err) {
+	setError(err instanceof Error ? err.message : "Erreur inconnue");
+	} finally {
+	setLoading(false);
+	}
+};
+fetchRooms();
+}, []);
 
   const joinRoom = (roomId: string) => {
     navigate("/game", { state: { playerName, roomId } });
@@ -74,7 +73,7 @@ export function Rooms() {
 					<ul>
 					{rooms.map((room) => (
 						<li className="bg-gray-400 mx-6 my-2 p-2" key={room.id}>
-						{room.name} — {room.players}/{room.maxPlayers} joueurs
+						{room.name} — {room.players}/{room.maxPlayers}
 						<button className="bg-red-500 outline-2 outline-neutral-800 p-2 m-3 hover:scale-110" onClick={() => joinRoom(room.id)}>Rejoindre</button>
 						</li>
 					))}

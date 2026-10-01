@@ -56,31 +56,67 @@ export function Home() {
 			</div>
 		</div>
 
-		<div className="flex-1 flex flex-col gap-6 px-8 pt-4">
-			<TextAnimate animation="slideLeft" by="character" once className="text-4xl text-neutral-800 font-bold max-w-[600px]">
-			STACK FAST. CLEAR LINES.</TextAnimate>
-			<div className="relative z-2 flex justify-start justify-center gap-4 px-12">
-				<Popup
-					isOpen={open}
-					value={input}
-					onChange={setInput}
-					onConfirm={confirm}
-					onCancel={cancel}
-				/>
-				<div className="flex w justify-start gap-[22px]">
-					<GameButton variant="primary" onClick={handlePlay}>
-					Singleplayer
-					</GameButton>
-					<GameButton variant="secondary" onClick={() => console.log("Multiplayer")}>
-					Multiplayer
-					</GameButton>
+		<div className="flex ">
+
+			<div className="flex-1 flex flex-col gap-6 px-8 pt-4">
+				<TextAnimate animation="slideLeft" by="character" once className="text-4xl text-neutral-800 font-bold max-w-[600px]">
+				STACK FAST. CLEAR LINES.</TextAnimate>
+				<div className="relative z-2 flex justify-start justify-center gap-4 px-12">
+					<Popup
+						isOpen={open}
+						value={input}
+						onChange={setInput}
+						onConfirm={confirm}
+						onCancel={cancel}
+						/>
+					<div className="flex w justify-start gap-[22px]">
+						<GameButton variant="primary" onClick={handlePlay}>
+						Singleplayer
+						</GameButton>
+						<GameButton variant="secondary" onClick={() => console.log("Multiplayer")}>
+						Multiplayer
+						</GameButton>
+					</div>
+				</div>
+				<div className="flex text-s font-semibold tracking-[0.35em] text-slate-800 uppercase dark:text-slate-200/60">
+					READY_  SEVEN PIECES · ONE WELL · ENDLESS FALL</div>
+			</div>
+
+
+
+		<div className="items-center px-8">
+			<div className="w-[360px] border-l-2 bg-gray-900/30 text-neutral-800 border-black flex flex-col self-start">
+
+				<div className="bg-red-600 text-[#d7d4ce] px-4 py-3 font-extrabold text-sm tracking-[2px]">
+					LEADERBOARD
+				</div>
+
+				<div className="grid grid-cols-[54px_1fr_auto] text-[11px] font-extrabold tracking-wide px-4 py-2.5 border-b-2 border-black opacity-60">
+					<span>RANK</span><span>NAME</span><span>SCORE</span>
+				</div>
+
+				<div className="grid grid-cols-[54px_1fr_auto] text-sm font-semibold px-4 py-3 border-b border-black/[.18]">
+					<span className="font-extrabold">01</span><span>NEO_</span><span>998,240</span>
+				</div>
+				<div className="grid grid-cols-[54px_1fr_auto] text-sm font-semibold px-4 py-3 border-b border-black/[.18]">
+					<span className="font-extrabold">02</span><span>BRK</span><span>874,010</span>
+				</div>
+				<div className="grid grid-cols-[54px_1fr_auto] text-sm font-semibold px-4 py-3 border-b border-black/[.18]">
+					<span className="font-extrabold">03</span><span>V0X</span><span>861,770</span>
+				</div>
+				<div className="grid grid-cols-[54px_1fr_auto] text-sm font-semibold px-4 py-3 border-b border-black/[.18]">
+					<span className="font-extrabold">04</span><span>TNT</span><span>799,300</span>
+				</div>
+				<div className="grid grid-cols-[54px_1fr_auto] text-sm font-semibold px-4 py-3 border-b border-black/[.18]">
+					<span className="font-extrabold">05</span><span>JEN</span><span>742,120</span>
+				</div>
+				<div className="grid grid-cols-[54px_1fr_auto] text-sm font-semibold px-4 py-3 opacity-60">
+					<span className="font-extrabold">06</span><span>???</span><span>690,050</span>
 				</div>
 			</div>
-				<div className="flex text-xs font-semibold tracking-[0.35em] text-slate-800/60 uppercase dark:text-slate-200/60">
-				READY_  SEVEN PIECES · ONE WELL · ENDLESS FALL</div>
+		</div>
 		</div>
 
-				<button onClick={() => navigate("/Game")}>Game</button>
 		<div className="border-t-2 text-neutral-800 border-black flex justify-between items-center px-8 py-3.5 text-xs tracking-wide">
 			<span>RED TETRIS © 2026</span>
 			<span className="opacity-75">V0.9.4</span>
